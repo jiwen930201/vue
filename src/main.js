@@ -14,12 +14,19 @@ import app from './App.vue';
 import './lib/mui/css/mui.min.css';
 import './lib/mui/css/icons-extra.css';
 
+//引入moment插件
+import moment from 'moment';
+//匹配全局过滤器
+Vue.filter('dataTime',function(dataStr){
+    return moment().format("YYYY-MM-DD HH:mm:ss")
+})
 
 //按需导入mint-ui组件
-import{Header,Swipe,SwipeItem} from 'mint-ui';
+import{Header,Swipe,SwipeItem,Button} from 'mint-ui';
 Vue.component(Header.name,Header);
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
+Vue.component(Button.name, Button);
 
 
 

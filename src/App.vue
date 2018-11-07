@@ -39,6 +39,7 @@
 .app-container {
   padding-top: 50px;
   overflow-x: hidden;
+	padding-bottom: 50px;
  .mint-header.is-fixed{
 	 font-size: 16px;
  }

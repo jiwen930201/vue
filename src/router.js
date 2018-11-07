@@ -1,26 +1,29 @@
 import VueRouter from 'vue-router';
- import Vue from 'vue';
- Vue.use(VueRouter)
+import Vue from 'vue';
 
- //导入对应的路由组件
- import Home from './components/tabbar/home.vue';
- import Member from './components/tabbar/member.vue';
- import Shopcar from './components/tabbar/shopcar.vue';
- import Search from './components/tabbar/search.vue';
+Vue.use(VueRouter);
 
- import Newlist from './components/newLsit/newlist.vue'
+//导入对应的路由组件
+import Home from './components/tabbar/home.vue';
+import Member from './components/tabbar/member.vue';
+import Shopcar from './components/tabbar/shopcar.vue';
+import Search from './components/tabbar/search.vue';
+
+import Newlist from './components/newLsit/newlist.vue'
+import NewsInfo from './components/newLsit/newsInfo.vue'
 // 3. 创建路由对象
 var router = new VueRouter({
-  routes: [
-    {path:"/",redirect:'/home'},
-    {path:'/home',component:Home},
-    {path:'/member',component:Member},
-    {path:'/shopcar',component:Shopcar},
-    {path:'/search',component:Search},
-    {path:"/home/newlist",component:Newlist}
-    
-  ],
-  linkActiveClass:'mui-active'
+    routes: [
+        {path: "/", redirect: '/home'},
+        {path: '/home', component: Home},
+        {path: '/member', component: Member},
+        {path: '/shopcar', component: Shopcar},
+        {path: '/search', component: Search},
+        {path: "/home/newlist", component: Newlist},
+        {path: "/home/newsinfo/:id", component: NewsInfo}
+
+    ],
+    linkActiveClass: 'mui-active'
 })
 
 // 把路由对象暴露出去
