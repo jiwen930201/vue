@@ -11,6 +11,8 @@ import Search from './components/tabbar/search.vue';
 
 import Newlist from './components/newLsit/newlist.vue'
 import NewsInfo from './components/newLsit/newsInfo.vue'
+
+import photoList from './components/photo/photoList.vue'
 // 3. 创建路由对象
 var router = new VueRouter({
     routes: [
@@ -20,7 +22,8 @@ var router = new VueRouter({
         {path: '/shopcar', component: Shopcar},
         {path: '/search', component: Search},
         {path: "/home/newlist", component: Newlist},
-        {path: "/home/newsinfo/:id", component: NewsInfo}
+        {path: "/home/newsinfo/:id", component: NewsInfo},
+        {path:'/home/photolist',component:photoList}
 
     ],
     linkActiveClass: 'mui-active'

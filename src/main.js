@@ -8,6 +8,8 @@ import router from './router.js';
 import VueResource from 'vue-resource';
 Vue.use(VueResource);
 Vue.http.options.root="http://www.liulongbin.top:3005";
+//全局设置post时候表单数据的类型
+Vue.http.options.emulateJSON=true;
 
 import app from './App.vue';
 
@@ -18,7 +20,7 @@ import './lib/mui/css/icons-extra.css';
 import moment from 'moment';
 //匹配全局过滤器
 Vue.filter('dataTime',function(dataStr){
-    return moment().format("YYYY-MM-DD HH:mm:ss")
+    return moment(dataStr).format("YYYY-MM-DD HH:mm:ss")
 })
 
 //按需导入mint-ui组件
