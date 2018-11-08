@@ -4,7 +4,7 @@
         <hr>
         <textarea placeholder="请输入要咨询的内容(最多字数120)" maxlength="120"></textarea>
         <mt-button type="primary" size="large">发表评论</mt-button>
-        <div class="cmt-list" v-for="(item,i) in comments" :key="item.add_time">
+        <div class="cmt-list" v-for="(item,i) in comments" :key="i">
             <div class="cmt-item">
                 <div class="cmt-title">
                     第{{ i+1 }}楼&nbsp;&nbsp;用户:{{ item.user_name }}&nbsp;&nbsp;发表时间:{{ item.add_time | dataTime }}
@@ -14,47 +14,7 @@
                 </div>
             </div>
         </div>
-<!--        <div class="cmt-list">
-            <div class="cmt-item">
-                <div class="cmt-title">
-                    第2楼&nbsp;&nbsp;用户:匿名用户&nbsp;&nbsp;发表时间:2018:10-23
-                </div>
-                <div class="cmt-body">
-                    倒车影像哪个品牌好_倒车影像品牌排行榜
-                </div>
-            </div>
-        </div>
-        <div class="cmt-list">
-            <div class="cmt-item">
-                <div class="cmt-title">
-                    第3楼&nbsp;&nbsp;用户:匿名用户&nbsp;&nbsp;发表时间:2018:10-23
-                </div>
-                <div class="cmt-body">
-                    倒车影像哪个品牌好_倒车影像品牌排行榜
-                </div>
-            </div>
-        </div>
-        <div class="cmt-list">
-            <div class="cmt-item">
-                <div class="cmt-title">
-                    第4楼&nbsp;&nbsp;用户:匿名用户&nbsp;&nbsp;发表时间:2018:10-23
-                </div>
-                <div class="cmt-body">
-                    倒车影像哪个品牌好_倒车影像品牌排行榜
-                </div>
-            </div>
-        </div>
-        <div class="cmt-list">
-            <div class="cmt-item">
-                <div class="cmt-title">
-                    第5楼&nbsp;&nbsp;用户:匿名用户&nbsp;&nbsp;发表时间:2018:10-23
-                </div>
-                <div class="cmt-body">
-                    倒车影像哪个品牌好_倒车影像品牌排行榜
-                </div>
-            </div>
-        </div>-->
-        <mt-button type="danger" size="large" plain>加载更多</mt-button>
+        <mt-button type="danger" size="large" plain @click="getMore">加载更多</mt-button>
     </div>
 </template>
 
@@ -79,6 +39,10 @@
                         Toast('获取咨询数据失败')
                     }
                 })
+            },
+            getMore(){
+                this.pageindex++;
+                this.getCommentList()
             }
         },
         props: ['id']
