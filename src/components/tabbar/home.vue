@@ -24,7 +24,8 @@
                     <div class="mui-media-body">汽车保养</div>
                 </router-link>
             </li>
-            <li class="mui-table-view-cell mui-media mui-col-xs-4"><router-link to="/home/photolist">
+            <li class="mui-table-view-cell mui-media mui-col-xs-4">
+                <router-link to="/home/photolist">
                     <img src="../../images/menu2.png" alt="">
                     <div class="mui-media-body">汽车喷漆</div>
                 </router-link></li>

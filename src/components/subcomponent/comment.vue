@@ -4,13 +4,13 @@
         <hr>
         <textarea placeholder="请输入要咨询的内容(最多字数120)" maxlength="120" v-model="msg"></textarea>
         <mt-button type="primary" size="large" @click="postComment">发表评论</mt-button>
-        <div class="cmt-list" v-for="(item,i) in comments" :key="i">
-            <div class="cmt-item">
+        <div class="cmt-list">
+            <div class="cmt-item"  v-for="(item,i) in comments" :key="i">
                 <div class="cmt-title">
                     第{{ i+1 }}楼&nbsp;&nbsp;用户:{{ item.user_name }}&nbsp;&nbsp;发表时间:{{ item.add_time | dataTime }}
                 </div>
                 <div class="cmt-body">
-                    {{ item.content ===undefined ? '此用户很懒,什么也没有' : item.content}}
+                    {{ item.content ==='undefined' ? '此用户很懒,什么也没有' : item.content}}
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
         },
         methods: {
             getCommentList() {
-                this.$http.get('api/getcomments/' + this.id + '?pageindex=1').then(function (result) {
+                this.$http.get('api/getcomments/' + this.id + '?pageindex='+ this.pageindex).then(function (result) {
                     if(result.body.status==0){
                         //使用concat()方法拼接之前的数据 这样不会清空之前的数据
                         this.comments= this.comments.concat(result.body.message);
