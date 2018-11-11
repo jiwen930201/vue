@@ -1,6 +1,11 @@
 // 入口文件
 import Vue from 'vue';
 
+import MintUI from 'mint-ui'
+Vue.use(MintUI)
+import 'mint-ui/lib/style.css'
+
+
 //导入自己的路由的包
 import router from './router.js';
 
@@ -24,11 +29,12 @@ Vue.filter('dataTime',function(dataStr){
 })
 
 //按需导入mint-ui组件
-import{Header,Swipe,SwipeItem,Button} from 'mint-ui';
-Vue.component(Header.name,Header);
-Vue.component(Swipe.name, Swipe);
-Vue.component(SwipeItem.name, SwipeItem);
-Vue.component(Button.name, Button);
+// import{Header,Swipe,SwipeItem,Button,Lazyload } from 'mint-ui';
+// Vue.component(Header.name,Header);
+// Vue.component(Swipe.name, Swipe);
+// Vue.component(SwipeItem.name, SwipeItem);
+// Vue.component(Button.name, Button);
+// Vue.use(Lazyload);
 
 
 

@@ -1,0 +1,20 @@
+{
+    "status": 0,
+    "message": [
+        {
+            "id": 1,
+            "url": "https://www.mi.com/",
+            "img": "https://i1.mifile.cn/a4/xmad_15415038329853_xiWTO.jpg"
+        },
+        {
+            "id": 2,
+            "url": "https://www.mi.com/",
+            "img": "https://i1.mifile.cn/a4/xmad_15409525725204_NuvzS.jpg"
+        },
+        {
+            "id": 3,
+            "url": "https://www.mi.com/",
+            "img": "https://i1.mifile.cn/a4/xmad_15411417211918_EUHLt.jpg"
+        }
+    ]
+}
